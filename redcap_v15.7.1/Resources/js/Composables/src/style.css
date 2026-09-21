@@ -1,0 +1,123 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --navbar-size: 3rem;
+}
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Container */
+nav {
+  position: fixed; /* Keeps it at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #333; /* Dark background */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Ensures it stays above other content */
+  height: var(--navbar-size);
+}
+
+/* Logo */
+.nav-logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* Navbar Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #00c3ff; /* Highlight color on hover */
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: #222;
+      width: 200px;
+      padding: 10px;
+      border-radius: 5px;
+  }
+
+  .nav-links li {
+      margin: 10px 0;
+      text-align: center;
+  }
+
+  .nav-links a {
+      display: block;
+      padding: 10px;
+  }
+
+  .menu-toggle {
+      display: block;
+  }
+}
+
+/* Show mobile menu when active */
+.nav-active {
+  display: flex !important;
+}
+
+
+/* Main Content */
+main {
+  padding-top: var(--navbar-size); /* Push content below navbar */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#content-container {
+  padding: 20px;
+}

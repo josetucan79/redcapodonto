@@ -1,0 +1,13 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+test_record_id,test_form,,text,"Test Record ID",,,,,,,,,,,,,
+test_text_field,test_form,,text,"Test Text Field",,,,,,,,,,,,,
+test_text_field_2,test_form,,text,"Test Text Field 2",,,,,,,,,,,,,
+test_sql_field,test_form,,sql,"Test SQL Field","select 1 as 'record', 'one' as 'value' union select 2, 'two' union select '', 'blank' union select null, 'null';",,,,,,,,,,,,
+test_radio_field,test_form,,radio,"Test Radio Field","1, a | 2, b | 3, c",,,,,,,,,,,,
+test_checkbox_field,test_form,,checkbox,"Test Checkbox Field","1, a | 2, b | 3, c",,,,,,,,,,,,
+test_yesno_field,test_form,,yesno,"Test YesNo Field",,,,,,,,,,,,,
+test_calc_field,test_form,,calc,"Test Calc Field",1,,,,,,,,,,,,
+test_repeating_field_1,test_repeating_form,,text,"Test Repeating Field 1",,,,,,,,,,,,,
+test_repeating_field_2,test_repeating_form,,text,"Test Repeating Field 2",,,,,,,,,,,,,
+test_repeating_field_3,test_repeating_form,,text,"Test Repeating Field 3",,,,,,,,,,,,,
+test_repeating_form_2_field_1,test_repeating_form_2,,text,"Test Repeating Form 2 Field 1",,,,,,,,,,,,,

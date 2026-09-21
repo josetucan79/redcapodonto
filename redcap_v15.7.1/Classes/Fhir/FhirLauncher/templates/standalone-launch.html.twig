@@ -1,0 +1,46 @@
+{% extends "layouts/main.html.twig" %}
+
+{% block title %}EHR Launcher - Standalone Launch{% endblock %}
+
+{% block content %}
+
+    <div>
+        <h3>Standalone Launch</h3>
+        <p>SMART supports EHR launch and standalone launch.</p>
+        <p>The standalone application does not need to be launched by an EHR.
+            The app can launch and access FHIR data on its own, provided the app is authorized and given the iss URL.</p>
+        <p>Once an app receives a launch request, it requests authorization to access
+        a FHIR resource by causing the browser to navigate to the EHR's authorization endpoint.
+        Based on pre-defined rules and possibly end-user authorization,
+        the EHR authorization server either grants the request by returning
+        an authorization code to the app's redirect URL, or denies the request.
+        The app then exchanges the authorization code for an access token,
+        which the app presents to the EHR's resource server to access requested
+        FHIR resources. If a refresh token is returned along with the access token,
+        the app may use this to request a new access token, with the same scope,
+        once the access token expires.</p>
+
+        {% if ehrSystems|length == 1 %}
+        <a class="btn btn-primary btn-sm text-white" href="{{ standaloneLaunchURL }}&ehr_id={{ ehrSystems[0].ehr_id }}">
+            <i class="fas fa-rocket"></i> standalone launch
+        </a>
+        {% else %}
+        <div class="simple-dropdown">
+            <button class="btn btn-primary btn-sm simple-dropdown-toggle" type="button">
+                <i class="fas fa-rocket"></i>
+                <span>standalone launch...</span>
+                <span class="simple-caret"></span>
+            </button>
+            <ul class="simple-dropdown-menu">
+                {% for ehrSystem in ehrSystems %}
+                <li>
+                    <a class="simple-dropdown-item" href="{{ standaloneLaunchURL }}&ehr_id={{ ehrSystem.ehr_id }}">
+                        {{ ehrSystem.ehr_name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

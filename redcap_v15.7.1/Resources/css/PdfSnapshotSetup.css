@@ -1,0 +1,48 @@
+#record-snapshot-table-parent { max-width:1100px;margin: 10px 0 20; }
+#record-snapshot-table { width: 100% !important; }
+#record-snapshot-table-btns {
+    margin: 5px 20px 5px 5px;
+    padding-bottom: 10px;
+}
+#record-snapshot-table_length {
+    float: right;
+    margin-right: 30px;
+}
+#sub-nav  {
+    margin-top: 15px !important;
+}
+#sub-nav li:first-child, #sub-nav li:first-child a {
+    background: #fff;
+    font-weight: normal;
+    color: #888
+}
+#choose_select_forms_events_div {
+    min-width:280px;
+    background: transparent url(../images/upArrow.png) no-repeat center top;
+    position:absolute;
+    z-index:102;
+    padding:9px 0 0;
+    display: none;
+    font-size:11px;
+}
+#choose_select_forms_events_div_sub {
+    background-color: #fafafa;
+    padding:3px 6px 10px;
+    border:1px solid #000;
+    overflow-y: scroll;
+    max-height: 400px;
+}
+#choose_select_forms_events_table tr td { vertical-align:top; padding:2px 5px 4px 1px; }
+#selected_forms_events { cursor: pointer; cursor: hand; border:none; background-color: transparent; width:95%; max-width:95%;overflow:hidden;white-space: nowrap;text-overflow: ellipsis; }
+.hangevl { text-indent: -1.5em; margin-left: 3.2em; }
+.hangevc { text-indent: -1.5em; margin-left: 1.8em; }
+
+.dataTable .form-switch input {
+    background-color: white;
+    transition: 0.2s all;
+    outline: 1px solid lightcoral;
+}
+.dataTable .form-switch input:checked {
+    background-color: #28a745;
+    outline: none;
+}

@@ -1,0 +1,16 @@
+{
+    "require": {
+        "phpunit/phpunit": "^9"
+    },
+    "config": {
+        "platform-check": false,
+        "platform": {
+            "php": "7.3.0"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vanderbilt\\REDCap\\Tests\\": "./"
+        }
+    }
+}

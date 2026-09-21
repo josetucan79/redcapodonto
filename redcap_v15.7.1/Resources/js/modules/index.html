@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" defer>
+        import Store from './Store.js'
+
+        const myStore = Store({counter:0, nested: {a:1, b:2}}, 'myStore')
+
+        function template(data) {
+            return `
+            <p>${data.counter}</p>
+            <p>${data.nested.a}</p>
+            `;
+        }
+        const app = document.querySelector('#app')
+        const myButton = document.querySelector('#incrementer')
+        const myButton1 = document.querySelector('#incrementer1')
+
+        myButton.addEventListener('click', (e) => {
+            myStore.counter++
+            console.log(myStore)
+        })
+
+        myButton1.addEventListener('click', (e) => {
+            myStore.nested.a++
+            console.log(myStore)
+        })
+
+        document.addEventListener('myStore', (e) => {
+            const data = e.detail
+            app.innerHTML = template(data)
+        })
+
+    </script>
+</head>
+<body>
+    <button type="button" id="incrementer">increment</button>
+    <button type="button" id="incrementer1">increment nested</button>
+    <div id="app"></div>
+</body>
+</html>

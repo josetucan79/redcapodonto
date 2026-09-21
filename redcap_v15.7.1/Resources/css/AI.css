@@ -1,0 +1,82 @@
+div.btn-ai-group {
+    margin-left: -1px;
+}
+.btn-ai-group, .btn-ai-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn-ai-group>.btn-ai-group:first-child:not(:last-child)>.btn-ai:last-child, .btn-ai-group>.btn-ai-group:first-child:not(:last-child)>.dropdown-toggle {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.btn-ai-group>.btn-ai:first-child {
+    margin-left: 0;
+}
+.btns-panel .btn-ai-group button, #goalViewBox, #top_counter button, #text-to-speech-controls, #copy {
+    border-radius: 4px !important;
+}
+.btn-ai-group>.btn-ai, .btn-ai-group-vertical>.btn-ai {
+    position: relative;
+    float: left;
+}
+.btn-ai {
+    padding: 4px 6px;
+}
+.btn-ai-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn-ai {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    line-height: 0.9;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.btn-ai:hover,.btn-ai:focus,.btn-ai.focus {
+    color: #333;
+    text-decoration: none;
+}
+.btn-ai-group>.btn-ai:hover,.btn-ai-group-vertical>.btn-ai:hover,.btn-ai-group>.btn-ai:focus,.btn-ai-group-vertical>.btn-ai:focus,.btn-ai-group>.btn-ai:active,.btn-ai-group-vertical>.btn-ai:active,.btn-ai-group>.btn-ai.active,.btn-ai-group-vertical>.btn-ai.active {
+    z-index: 2;
+    outline: none;
+}
+.btn-ai-default:hover {
+    background-color: #ccc;
+    border-color: #ccc;
+}
+.btn-ai-default:disabled, .btn-ai-default[disabled] {
+    background-color: #ccc;
+    cursor: default;
+}
+
+.action-text {
+    font-size: 80%;
+    color: #800000;
+    font-weight: bold;
+}

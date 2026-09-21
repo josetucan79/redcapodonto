@@ -1,0 +1,102 @@
+/* Custom Dropdown Menu Variables */
+.--custom-dropdown-menu {
+    --cdd-border-color: #cacaca;
+    --cdd-button-padding-y: 4px;
+    --cdd-button-padding-x: 8px;
+    --cdd-button-line-height: 21px;
+    --cdd-border-radius-sm: 0.25rem;
+    --cdd-background-color: #0b0909;
+    --cdd-button-text-color: #ffffff;
+    --cdd-button-background-color: #0d6efd;
+    --cdd-button-background-color-hover: #0b5ed7;
+    display: inline-block;
+}
+
+/* General styling for the menu wrapper */
+.--custom-dropdown-menu .menu-wrapper {
+    position: relative;
+    z-index: 100;
+}
+
+/* Styling for the dropdown list (ul) directly inside the menu wrapper */
+.--custom-dropdown-menu .menu-wrapper > ul {
+    min-width: 200px;
+    position: absolute;
+    top: 100%;
+}
+
+/* Special button styling for non-first-level menu items */
+.--custom-dropdown-menu .menu-wrapper:not([data-level="1"]) button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+/* Positioning for nested ul elements not at the first level */
+.--custom-dropdown-menu .menu-wrapper:not([data-level="1"]) > ul {
+    left: 100%;
+    top: 0;
+}
+
+/* Styling for buttons at the first level of the menu */
+.--custom-dropdown-menu .menu-wrapper[data-level="1"] > button {
+    padding: var(--cdd-button-padding-y) var(--cdd-button-padding-x);
+    line-height: var(--cdd-button-line-height);
+    border-radius: var(--cdd-border-radius-sm);
+    border: solid 1px var(--cdd-border-color);
+    color: var(--cdd-button-text-color);
+    background-color: var(--cdd-button-background-color);
+}
+
+/* Hover effect for first-level menu buttons */
+.--custom-dropdown-menu .menu-wrapper[data-level="1"] > button:hover {
+    background-color: var(--cdd-button-background-color-hover);
+}
+
+/* Styling for the toggle menu button */
+.--custom-dropdown-menu .toggle-menu {
+    position: relative;
+    display: flex;
+    gap: 5px;
+}
+
+/* After pseudo-element for the toggle menu */
+.--custom-dropdown-menu .toggle-menu:after {
+    display: inline-block;
+    content: '>';
+    margin-left: auto;
+}
+
+/* General styling for all child elements */
+.--custom-dropdown-menu * {
+    text-align: left;
+    width: 100%;
+    font-weight: normal;
+}
+
+/* Specific styling for ul elements directly inside a div */
+.--custom-dropdown-menu div > ul {
+    border-radius: 5px;
+    border: solid 1px var(--cdd-border-color);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+}
+
+/* Styling for all ul elements */
+.--custom-dropdown-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: var(--cdd-background-color);
+}
+
+/* Styling for list items (li) */
+.--custom-dropdown-menu li {
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+}
+
+/* Border styling for all list items except the last one */
+.--custom-dropdown-menu li:not(:last-child) {
+    border-bottom: solid 1px var(--cdd-border-color);
+}

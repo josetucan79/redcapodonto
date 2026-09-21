@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>REDCap - {% block title %}{% endblock %}</title>
+    
+    <link rel="stylesheet" type="text/css" href="{{ APP_PATH_JS }}EHR/bootstrap.min.css" media="screen,print">
+    <link rel="stylesheet" type="text/css" href="{{ APP_PATH_WEBPACK }}css/bundle.css" media="screen,print">
+    <link rel="stylesheet" type="text/css" href="{{ APP_PATH_WEBPACK }}css/fontawesome/css/all.min.css" media="screen,print">
+    <link rel="stylesheet" type="text/css" href="{{ APP_PATH_CSS }}style.css" media="screen,print">
+    <link rel="shortcut icon" href="{{ APP_PATH_IMAGES }}favicon.ico" type="image/x-icon">
+    
+    {# Make sure assets are only loaded once #}
+    {% if not constant('ASSETS_LOADED') is defined %}
+        {% include 'partials/assets.html.twig' %}
+    {% endif %}
+</head>
+<body>
+    
+    {% include 'partials/global-js-variables.html.twig' %}
+
+    <style>
+    body {
+        margin: 10px auto;
+    }
+    </style>
+    <div class="container">
+        {% block header %}
+        {# Here goes sidebar content #}
+        <header>
+            <a href="{{ APP_PATH_WEBROOT_PARENT }}">
+                <img src="{{ APP_PATH_IMAGES }}redcap-logo.png" title="REDCap" style="height:45px;">
+            </a>
+        </header>
+        {% endblock %}
+
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
+
+    </div>
+</body>
+</html>

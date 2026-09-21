@@ -1,0 +1,1 @@
+ALTER TABLE `redcap_surveys_scheduler` CHANGE `num_recurrence` `num_recurrence` FLOAT NOT NULL DEFAULT '0';

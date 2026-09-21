@@ -1,0 +1,5 @@
+{
+	"namespace": "SomeNamespace\\TestModule",
+	"enable-every-page-hooks-on-system-pages": true,
+	"enable-email-hook-in-system-contexts": true
+}

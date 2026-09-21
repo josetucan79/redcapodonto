@@ -1,0 +1,11 @@
+<style>
+    @import url({{ APP_PATH_JS }}EHR/modal/style.css);
+    @import url({{ APP_PATH_JS }}EHR/toast/style.css);
+    @import url({{ APP_PATH_JS }}EHR/dropdown/style.css);
+</style>
+
+{{ loadJS('EHR/modal/Modal.js') }}
+{{ loadJS('EHR/toast/ToastManager.js') }}
+{{ loadJS('EHR/dropdown/SimpleDropdown.js') }}
+
+{{ define('ASSETS_LOADED', true) }}

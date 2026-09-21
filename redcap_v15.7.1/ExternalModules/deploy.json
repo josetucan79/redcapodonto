@@ -1,0 +1,43 @@
+{
+    "SRC": "/app001/www/redcap/external_modules",
+    "DEST_DIR": "/app001/www/redcap/",
+    "RFLAGS": "--exclude 'deploy.json' --delete -avzcO -e ssh",
+    "EXCLUDES": [
+        ".idea",
+        ".phpunit.result.cache",
+        ".git*",
+        "node_modules",
+        "external_modules/vendor"
+    ],
+    "DEFAULTS": {
+        "run_tests": true,
+        "run_predeploy": true,
+        "run_postdeploy": true,
+        "deploy_staging": false,
+        "deploy_production": true,
+        "create_tag": true
+    },
+    "SCRIPTS": [
+        {
+            "type": "test",
+            "environments": ["local"],
+            "dir": "{{SRC}}",
+            "cmds": [
+                "./predeploy.sh",
+                "echo \"Running tests... This may take a few minutes.  If this is an emergency deployment, and you are confident tests are already passing, you may bypass them by temporarily adding an 'exit' line to the top of 'run-tests.sh'.\" > /dev/null",
+                "./run-tests.sh"
+            ],
+            "confirm": true
+        },
+        {
+            "type": "post_deploy",
+            "environments": ["local"],
+            "dir": "{{SRC}}",
+            "cmds": [
+                "git checkout testing",
+                "echo Running composer install again on the testing branch, in case running it on the production branch downgraded anything",
+                "composer install"
+            ]
+        }
+    ]
+}

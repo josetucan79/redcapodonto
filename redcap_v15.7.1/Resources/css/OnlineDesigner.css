@@ -1,0 +1,583 @@
+/* CSS for Online Designer */
+:root {
+    --online-designer-move-color: #258ae7;
+    --online-designer-branchinglogic-color: #008000;
+    --qef-selected-row-color: #e5f5e9;
+    --qef-selected-row-current-color: #c8e7cf;
+    --qef-goto-field-color: #70bb81;
+    --color-rc-blue: #286090;
+    --color-rc-green: #41a741;
+    --color-rc-danger: #c00000;
+    --color-rc-orange: #e7af45;
+    --color-rc-purple: #a594c5;
+    --color-rc-red: #dc3545;
+    --color-rc-dark: #303030;
+    --color-rc-gray: #666;
+    --color-rc-lightgray: #ccc;
+    --color-rc-lightorange: #f3e4c8;
+    --online-designer-field-validation-bgcolor: #faf7699d;
+}
+/* General */
+.text-rc-blue {
+    color: var(--color-rc-blue);
+}
+.text-rc-green {
+    color: var(--color-rc-green);
+}
+.text-rc-danger {
+    color: var(--color-rc-danger);
+}
+.text-rc-orange {
+    color: var(--color-rc-orange);
+}
+.text-rc-purple {
+    color: var(--color-rc-purple);
+}
+.text-rc-red {
+    color: var(--color-rc-red);
+}
+.text-rc-dark {
+    color: var(--color-rc-dark);
+}
+.text-rc-lightgray {
+    color: var(--color-rc-lightgray);
+}
+#forms_surveys .mDiv { overflow: visible; }
+/* Icons */
+.design-field-icons {
+    min-height: 22px;
+}
+.design-matrix-icons { 
+    background-color:#ccc;border:1px solid #999;padding:3px 0 5px 5px;margin-bottom:2px; 
+}
+/* Multi-field selection */
+.qef-select-checkbox {
+    margin: 3px;
+}
+/* Quick action buttons */
+div.multi-field-action:has(button[data-multi-field-action]:disabled) {
+    cursor: not-allowed;
+}
+button[data-multi-field-action="required-ON"] {
+    color: var(--online-designer-required-color);
+}
+button[data-multi-field-action="phi-OFF"] {
+    color: var(--online-designer-required-color);
+}
+/* Popover */
+.qef-actions-popover .popover-header {
+    background-color: var(--qef-selected-row-current-color);
+}
+.qef-actions-popover .popover-body {
+    padding: 5px;
+}
+.qef-actions-popover h3.popover-header {
+    padding: 0;
+}
+.qef-actions-popover h3.popover-header div.title-row {
+    font-size: 14px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.qef-actions-popover div[data-bs-toggle="tooltip"] {
+    display: inline-block;
+}
+.qef-actions-popover button.btn-light {
+    --bs-btn-bg: #9afeb022;
+}
+.qef-actions-popover button.btn-light.grayish-action {
+    --bs-btn-bg: #a0a0a022;
+}
+.qef-actions-popover hr {
+    margin: 5px 0;
+}
+/* Tooltips */
+.od-tooltip {
+    --bs-tooltip-bg: #242924;
+}
+
+/* Field Actions and Icons */
+.field-action-link, 
+.field-action-link:hover {
+    text-decoration: none;
+    outline: none;
+    padding: 4px 2px;
+}
+.field-action-link:hover:not(.disabled),
+.field-action-link:focus:not(.disabled),
+.field-action-link:focus-within:not(.disabled) {
+    border-bottom: #65bd98 2px solid;
+    background-color: #aaaaaa66;
+    outline: none;
+}
+.icon-online-designer-edit,
+.field-action-link[data-field-action="edit-field"],
+.field-action-link[data-field-action="edit-header"],
+.field-action-link[data-field-action="edit-matrix"] {
+    font-size: 14px;
+}
+/* Branching Logic / Action Tags dialogs */
+.quick-edit-options-dialog {
+    --bs-border-color: var(--color-rc-purple);
+}
+
+/* Prevent move cursor on rows that are multi-selected */
+table.frmedit_tbl.qef-field-selected {
+    cursor: default !important;
+}
+/* Field highlight */
+.qef-field-selected, 
+.qef-field-selected tr, 
+.qef-field-selected td {
+    background-color: var(--qef-selected-row-color) !important;
+}
+.qef-field-selected.qef-field-current, 
+.qef-field-selected.qef-field-current tr, 
+.qef-field-selected.qef-field-current td {
+    --qef-selected-row-color: var(--qef-selected-row-current-color);
+}
+
+/* Expand popover */
+.multi-field-expand-popover {
+    --bs-popover-max-width: unset;
+}
+.multi-field-expand-popover h3.popover-header {
+    font-size: 13px;
+    padding: 5px 10px;
+    color: var(--color-rc-dark);
+}
+.multi-field-expand-popover .title-row {
+    display: flex;
+    align-items: center;
+}
+.multi-field-expand-popover .qees-flex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 25px;
+}
+.multi-field-expand-popover .popover-body {
+    padding: 10px;
+}
+.multi-field-expand-popover hr {
+    margin: 5px 0;
+}
+.multi-field-expand-popover label:has(input:focus) {
+    outline: 2px dotted var(--color-rc-green);
+    outline-offset: -2px;
+}
+.multi-field-expand-popover .qees-flex-container label {
+    display: inline-block;
+    vertical-align: text-top;
+    text-align: center;
+    min-width: 20px;
+    min-height: 20px;
+    cursor: pointer;
+    color: rgb(66, 66, 66);
+    margin-right: 3px;
+    border-bottom: 4px solid transparent;
+    --qees-selected-color: var(--color-rc-purple);
+}
+.multi-field-expand-popover .qees-flex-container label:hover {
+    background-color: #ccc;
+}
+.multi-field-expand-popover .qees-flex-container label:has(input:checked) {
+    border-bottom: 4px solid var(--qees-selected-color);
+    background-color: #ddd;
+    color: black;
+}
+.multi-field-expand-popover .qees-flex-container.qees-include label {
+    --qees-selected-color: var(--color-rc-green);
+}
+.multi-field-expand-popover .qees-flex-container.qees-exclude label {
+    --qees-selected-color: var(--color-rc-red);
+}
+.multi-field-expand-popover [data-qees-action^="apply"] {
+    --color-qees-apply-btn: var(--color-rc-green);
+}
+.multi-field-expand-popover [data-qees-action="apply-replace"] {
+    --color-qees-apply-btn: var(--color-rc-danger);
+}
+.multi-field-expand-popover [data-qees-action^="apply"],
+.multi-field-expand-popover [data-qees-action^="apply"]:hover {
+    border-color: var(--color-qees-apply-btn);
+}
+.multi-field-expand-popover [data-qees-action^="apply"]:hover {
+    outline: 1px solid var(--color-qees-apply-btn);
+}
+.multi-field-expand-popover [data-qees-action^="apply"] i {
+    color: var(--color-qees-apply-btn);
+}
+
+/* Set Survey Question Number */
+.qef-set-question-num {
+    max-width: 150px;
+}
+[data-field-action="surveycustomquestionnumber"].disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* KV Pair Editor */
+[data-qef-kvpair-content="spreadsheet"] {
+    min-width: 630px;
+    min-height: 410px;
+}
+.qef-kvpair-toolbar {
+    padding: 0 !important;
+}
+.qef-kvpair-toolbar .toolbar-btn {
+    border: 1px solid #cccccc;
+}
+.choices-editor-header-cell {
+    font-weight: bold;
+    padding: 4px !important;
+}
+.jexcel_contextmenu > div a:hover {
+    outline: none !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+}
+.jexcel_filter {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 6px 2px;
+}
+.jexcel_content.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+.qef-kvpair-fieldname {
+    font-family: var(--bs-font-monospace);
+    font-weight: 500;
+    color: var(--bs-code-color);
+    padding: 0 2px;
+}
+.qef-kvpair-editor .jexcel_search:not(:placeholder-shown) {
+    border-color: var(--color-rc-danger);
+    border-width: 2px;
+}
+.qef-kvpair-editor .jexcel_content textarea:focus {
+    box-shadow: none !important;
+}
+/* Edit Choices */
+.quick-edit-options-dialog a.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* How to modify - Display preference */
+.qef-preferred-location {
+    display: flex;
+    align-items: center;
+    font-size: 90%;
+    gap: 0.5em;
+}
+.qef-preferred-location label { 
+    margin-bottom: 0;
+}
+
+/* Goto field */
+#qef-goto-field-modal .modal-title {
+    white-space: nowrap;
+}
+#qef-goto-field-modal .modal-content {
+    width: fit-content;
+    outline: 10px solid var(--qef-goto-field-color);
+    outline-offset: -2px;
+}
+#qef-goto-field-modal .select2 {
+    width: 300px !important;
+}
+#qef-goto-field-modal .select2-container--open {
+    z-index: 99999;
+}
+.badge.shortcut {
+    font-weight: normal;
+}
+a:link.goto-link {
+    font-size: unset;
+}
+/* Drag and Drop */
+.qef-drag-source {
+    outline: 2px dashed var(--online-designer-move-color);
+    outline-offset: -1px;
+    opacity: 0.5;
+}
+.qef-drag-source tbody {
+    opacity: 0.5;
+}
+.design-matrix-icons::before,
+.design-matrix-icons::after,
+.frmedit_tbl::before,
+.frmedit_tbl::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px; /* Thickness of the border */
+    background-color: var(--online-designer-move-color); /* Color of the border */
+    opacity: 0;
+    transform: scaleY(0);
+    transform: scaleX(0.5);
+    transition: transform 0.3s, opacity 0.1s;    
+}
+.design-matrix-icons::before,
+.frmedit_tbl::before {
+    top: 0;
+    left: 0;
+}
+.design-matrix-icons::after,
+.frmedit_tbl::after {
+    bottom: -5px;
+    right: 0;
+}
+.qef-drag-target-before::before,
+.qef-drag-target-after::after {
+    opacity: 1;
+    transform: scaleY(1);
+    transform: scaleX(1);
+}
+.qef-drag-target-before, 
+.qef-drag-target-after {
+    transform: scale(1);
+    opacity: 0.8;
+    transition: transform 0.1s opacity 0.2s; 
+}
+.qef-drag-container {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    font-weight: bold;
+    position: absolute;
+    top: -2000px;
+    background-color: #fffaf0;
+}
+.qef-drag-container i {
+    color: var(--online-designer-move-color);
+}
+.frmedit.actiontags > div { 
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap; 
+}
+
+.frmedit.actiontags td, .frmedit.field-validation-type td { 
+    padding: 0px 6px 1px 6px;
+    background-color:#f3f3f3;
+}
+.frmedit.actiontags, .frmedit.field-validation-type { 
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.frmedit.field-validation-type {
+    font-size: 10px;
+}
+.frmedit.field-validation-type .field-validation-type-prompt {
+    color: gray;
+}
+
+i.button-checked, i.button-not-checked {
+    position: absolute;
+    right: -6px;
+    bottom: -3px;
+    background-color: white;
+    border-radius: 50%;
+}
+i.button-checked {
+    color: var(--color-rc-green);
+    display: none;
+}
+i.button-not-checked {
+    color: var(--color-rc-danger);
+    display: block;
+}
+button.checkable {
+    position: relative;
+    margin-bottom: 1px;
+}
+button.checked i.button-checked {
+    display: block;
+}
+button.checked i.button-not-checked {
+    display: none;
+}
+button.undetermined i.button-not-checked {
+    display: none;
+}
+/* Overlapping (smaller) status icons */
+button.checked-and-unchecked i.button-checked {
+    display: block;
+    right: 3px;
+    font-size: 80%; 
+}
+button.checked-and-unchecked i.button-not-checked {
+    display: block;
+    font-size: 80%; 
+}
+
+/* Hint Card and Field Navigator */
+#online-designer-hint-card {
+    position: absolute;
+    top: 175px;
+    left: 840px;
+    max-width: 250px;
+}
+.online-designer-fn-card-sticky {
+    position: fixed;
+    top: 1.5rem;
+    left: 1144px;
+    max-width: 250px;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+}
+/* Remove list symbol and set margin to 0 */
+#online-designer-fn-card-sh-list { 
+    list-style-type: none;
+    text-indent: -1em;
+    margin: .5em 0 0 1em;
+    padding: 0;
+}
+#online-designer-fn-card-sh-list li {
+    margin-bottom: 2px;
+}
+
+a.disabled {
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+
+/* Draft Mode Preview */
+#draft-preview-container {
+    padding: 20px 0 0 7px;
+    color: #A00000;
+}
+#draft-preview-container input, #draft-preview-container label {
+    cursor: pointer;
+}
+#draft-preview-container .form-switch, #draft-preview-container label { margin-bottom: 0; }
+
+
+.od-form-name {
+    font-weight: normal;
+    font-size: 12px;
+    color: var(--color-rc-gray);
+}
+.od-form-name a {
+    outline: none;
+}
+.od-form-name .edit-icon {
+    display: none;
+}
+.od-form-name:hover .edit-icon {
+    display: inline-block;
+}
+.edit-form-name-popover {
+    min-width: 300px;
+}
+.edit-form-name-popover .popover-body {
+    padding: 0;
+}
+.edit-form-name-popover header,
+.edit-form-name-popover main,
+.edit-form-name-popover footer {
+    padding: 5px 10px;
+}
+.edit-form-name-popover .popover-header {
+    font-size: 12px;
+}
+.edit-form-name-popover footer {
+    text-align: end;
+    padding-bottom: 10px;
+}
+.edit-form-name-popover .hint {
+    font-size: 11px;
+    line-height: 13px;
+    gap: .2em;
+    display: none;
+}
+.edit-form-name-popover:has(input:disabled) .hint.cannot-edit,
+.edit-form-name-popover:not(:has(input:disabled)) .hint.can-edit {
+    display: flex;
+}
+.edit-form-name-popover label {
+    font-size: 12px;
+}
+.edit-form-name-popover .form-check {
+    margin-left: .5em;
+}
+.edit-form-name-popover .form-check label {
+    font-size: 11px;
+}
+.enabled-as-survey-link, 
+.enabled-as-survey-link:hover {
+    display: block;
+    width: 100%;
+    outline: none;
+    color: inherit;
+}
+.enabled-as-survey-icons {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+.enabled-as-survey-icons .indicator {
+    display: none;
+    position: absolute;
+}
+
+.enabled-as-survey-icons.repeating .indicator.repeating {
+    display: block;
+    top: 5px;
+    left: -12px;
+    transform: scale(.7);
+}
+.enabled-as-survey-icons.auto-continue .indicator.auto-continue {
+    display: block;
+    top: 5px;
+    left: calc(100% + 2px);
+    transform: scale(.7);
+}
+.enabled-as-survey-icons.econsent .indicator.econsent {
+    display: block;
+    top: -5px;
+    left: calc(100%);
+    transform: scale(.7);
+}
+.enabled-as-survey-icons.stop-action .indicator.stop-action {
+    display: block;
+    top: -5px;
+    left: -12px;
+    transform: scale(.7);
+    opacity: .8;
+}
+
+.enabled-as-survey-link .show-on-hover {
+    display: none;
+    position: absolute;
+    left: calc(100% + 14px);
+    top: 50%;
+}
+.enabled-as-survey-link:hover .show-on-hover {
+    display: block;
+}
+.od-designate-for-event {
+    margin-left: 1.5em;
+    font-size: 90%;
+    white-space: nowrap;
+}
+.od-designate-for-event a, 
+.od-designate-for-event a:hover {
+    text-decoration: none;
+    outline: none;
+}
+[data-form-name] .od-designate-for-event {
+    margin-left: 0.5em;
+}
+[data-form-name]:has(.od-designate-for-event) a.formLink:hover {
+    outline: none;
+}

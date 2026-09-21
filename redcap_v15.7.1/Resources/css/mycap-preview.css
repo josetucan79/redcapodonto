@@ -1,0 +1,194 @@
+img.qrcode {
+    height: 265px;
+}
+td.clickable {
+    cursor: pointer;
+}
+td.moveable {
+    cursor: move;
+}
+td.moveable span i {
+    cursor: move;
+    padding-top: 4px;
+}
+td.hidden {
+    visibility: hidden;
+}
+th.hidden {
+    visibility: hidden;
+}
+.toggleable {
+    display: none;
+}
+.card-elevated {
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.14);
+    -moz-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    z-index: 5;
+}
+.dragButton {
+    cursor: move;
+}
+/* Modal phone preview related */
+.modal-dialog.phone {
+    width: 344px;
+}
+.phone-background {
+    background-color: #fff;
+}
+.phone-nav-bar {
+    height: 9%;
+    background-color: #00a8f2;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 3em;
+}
+.tvc {
+     font-size: 16px;
+ }
+.tvc .tvc-section-label {
+    margin-top: 10px;
+    color: grey;
+    text-transform: uppercase;
+}
+.tvc .row {
+    margin-top: 20px;
+}
+.tvc .tvc-row-label {
+    color: black;
+    font-weight: 400;
+}
+.tvc .tvc-row-data {
+    color: grey;
+
+}
+/* about page */
+.about-page img {
+    width: 60%;
+    margin: auto;
+}
+.match-height {
+    min-height: 300px;
+}
+/* theme page */
+.theme-color > div {
+    height: 40px;
+    margin-bottom: 40px;
+}
+.theme-color-box {
+    line-height: 40px;
+    text-align: center;
+    padding: 0 !important;
+}
+.theme-color-box input {
+    border: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.theme-color-blue .primary-color {
+    background-color: #00A8F2;
+}
+.theme-color-blue .light-primary-color {
+    background-color: #B5E5FB;
+}
+.theme-color-blue .accent-color {
+    background-color: #F65722;
+}
+.theme-color-blue .dark-primary-color {
+    background-color: #178ACE;
+}
+.theme-color-blue .light-background-color {
+    background-color: #EEF8FA;
+}
+.theme-color-purple .primary-color {
+    background-color: #4D3589;
+}
+.theme-color-purple .light-primary-color {
+    background-color: #D1C4E9;
+}
+.theme-color-purple .accent-color {
+    background-color: #FF4081;
+}
+.theme-color-purple .dark-primary-color {
+    background-color: #512DA8;
+}
+.theme-color-purple .light-background-color {
+    background-color: #E6E3E9;
+}
+/* Override bootstrap.colorpickersliders.css. We do not want to show the alpha channel selector ever */
+.cp-hsvpanel-a {
+    display: none !important;
+}
+/* Dropdowns as buttons */
+.dropdown-btn-block {
+    display: inline-block;
+}
+.link-icons-list {
+    padding-left: 0;
+    list-style: none;
+}
+.link-icons-list li {
+    float: left;
+    width: 112px;
+    height: 120px;
+    padding: 25px 10px;
+    font-size: 10px;
+    line-height: 1.4;
+    background-color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+    text-align: center;
+}
+.link-icons-list li img {
+    width: 48px;
+}
+.link-icons-list li.selected {
+    border-color: #00bcd4;
+}
+.justify-content-center {
+    justify-content: center !important;
+    display: flex;
+}
+#devtools {
+    background-color: #ddd;
+    position: fixed;
+    top: 69px;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    overflow-y:scroll;
+    overflow-x:scroll;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+#devtools table {
+    background-color: #fff;
+}
+#devtools table tr td {
+    vertical-align: top;
+    border: 1px solid gray;
+    padding: 5px;
+    max-width: 3000px;
+}
+#devtools table tr td.key {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+#devtools table tr td.value {
+    word-wrap: break-word;
+}
+.sidebar .nav .badge {    
+    border: 1px solid #FFF;
+    font-size: 9px;
+    background: #f44336;
+    color: #FFFFFF;
+    width: 20px;
+    padding: 0px 5px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 19px;
+    vertical-align: middle;
+}

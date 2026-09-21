@@ -1,0 +1,75 @@
+{# templates/error.html.twig #}
+{% extends "layouts/main.html.twig" %}
+
+{% block title %}FHIR Error{% endblock %}
+
+{% block content %}
+<h3>Error</h3>
+
+<div>
+    <ul>
+    {% for error in errors %}
+        {# error is a Throwable object #}
+        {% set message = error.getMessage() %}
+        {% set code = error.getCode() %}
+        {% set stackTrace = error.getTraceAsString() %}
+        
+        <p>{{ message }} - <span>Error code: {{ code }}</span></p>
+    {% endfor %}
+    </ul>
+</div>
+
+<a href="{{ redirectURL }}" class="btn btn-xs btn-secondary text-white">Retry</a>
+<div style="max-width: 800px;">
+    <h4>Log Views</h4>
+    <table class="table table-sm table-bordered table-striped">
+        <thead>
+            <tr>
+                <th style="width: 60%;">FULL URL</th>
+                <th style="width: 20%;">BROWSER</th>
+                <th style="width: 20%;">TIMESTAMP</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for logView in logViews %}
+            <tr>
+                <td class="text-truncate-custom">{{ logView.full_url }}</td>
+                <td>{{ logView.browser_name }} {{ logView.browser_version }}</td>
+                <td>{{ logView.ts }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if launchDiagram %}
+    <div class="card my-2">
+        <h2 class="card-header">
+            <span>Expected workflow</span>
+        </h2>
+        <div class="card-body">
+            <span class="diagram">{{ printImage(launchDiagram)|raw }}</span>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+<style>
+/* responsive diagram */
+.diagram > * {
+    width: 100%;
+    height: auto;
+}
+
+.logs-wrapper {
+    word-break: break-all;
+}
+
+/* Truncate long URLs */
+.text-truncate-custom {
+    max-width: 0;
+    overflow: scroll;
+    white-space: wrap;
+}
+</style>
+{% endblock %}

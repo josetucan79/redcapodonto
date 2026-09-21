@@ -1,0 +1,13 @@
+
+ == INSTRUCTIONS FOR UPGRADING REDCAP ==
+
+1.) Copy all the files/folders inside the "redcap" folder in this zip file onto your web server and place them 
+in your main REDCap directory (where the database.php file is located).
+
+2.) Navigate to the REDCap Control Center in your browser. You should see a new green box at the top saying "Ready To Upgrade". 
+Follow the link to the Upgrade Module, which will give you instructions for upgrading REDCap. (If the green box does not appear, 
+then you can upgrade manually by navigating to the URL .../redcap_vX.X.X/upgrade.php, in which X.X.X is the new version to 
+which you are upgrading.)
+
+
+ENJOY!

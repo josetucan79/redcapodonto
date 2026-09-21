@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset>
+    <!-- This ignores minified files (FlightTracker has many without the ".min.js" extension)-->
+    <rule ref="Internal.Tokenizer.Exception">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Internal.LineEndings.Mixed">
+        <severity>0</severity>
+    </rule>
+    <rule ref="PHPCompatibility.Lists.AssignmentOrder.Affected">
+        <severity>0</severity>
+    </rule>
+     <rule ref="PHPCompatibility.ParameterValues.NewHTMLEntitiesFlagsDefault.NotSet">
+        <severity>0</severity>
+    </rule>
+</ruleset>

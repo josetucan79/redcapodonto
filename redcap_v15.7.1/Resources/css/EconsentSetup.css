@@ -1,0 +1,28 @@
+#econsent-table-parent { max-width:1100px;margin: 10px 0 20; }
+#econsent-table { width: 100% !important; }
+#econsent-table-btns {
+    margin: 5px 20px 5px 5px;
+    padding-bottom: 10px;
+}
+#econsent-table_length {
+    float: right;
+    margin-right: 30px;
+}
+#sub-nav  {
+    margin-top: 15px !important;
+}
+#sub-nav li:first-child, #sub-nav li:first-child a {
+    background: #fff;
+    font-weight: normal;
+    color: #888
+}
+
+.dataTable .form-switch input {
+    background-color: white;
+    transition: 0.2s all;
+    outline: 1px solid lightcoral;
+}
+.dataTable .form-switch input:checked {
+    background-color: #28a745;
+    outline: none;
+}

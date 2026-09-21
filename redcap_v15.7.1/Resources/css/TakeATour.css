@@ -1,0 +1,10 @@
+/* Take A Tour */
+
+.take-a-tour a {
+	text-decoration: underline;
+}
+
+a.tour-loading {
+    pointer-events: none;
+    opacity: .5;
+}

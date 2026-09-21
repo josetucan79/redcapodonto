@@ -1,0 +1,1 @@
+DELETE FROM redcap_config WHERE field_name = 'email_alerts_converter_enabled';

@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @psalm-taint-sink sql $sql
+ * @return \mysqli_result
+ */
+function db_query($sql) {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_fetch_array() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_fetch_assoc() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_fetch_object() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_fetch_row() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function db_result() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function ldap_get_attributes() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function ldap_get_values_len() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function ldap_get_values() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function ldap_get_entries() {}

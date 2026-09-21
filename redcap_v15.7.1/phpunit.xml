@@ -1,0 +1,11 @@
+<phpunit
+	stopOnFailure="true"
+	stopOnError="true"
+	bootstrap="UnitTests/bootstrap.php"
+>
+	<testsuites>
+		<testsuite name="Tests">
+			<directory>UnitTests</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>

@@ -1,0 +1,10 @@
+// Add token for test project
+@token = 
+
+POST https://dev-redcap/api/ HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+token={{token}}
+&content=project
+&format=json
+&returnFormat=json

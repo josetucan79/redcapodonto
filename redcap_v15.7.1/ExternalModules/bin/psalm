@@ -1,0 +1,4 @@
+#!/bin/bash
+
+path='vendor/bin/psalm'
+$path "$@"

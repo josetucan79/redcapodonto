@@ -1,0 +1,1 @@
+export { useAssetLoader, AssetLoader } from './AssetLoader.js'

@@ -1,0 +1,20 @@
+{# templates/partials/alerts.html.twig #}
+<div id="toast-data" data-toasts="{{ toasts|json_encode }}"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Retrieve the toasts from the dataset
+        var toastContainer = document.getElementById('toast-data');
+        var toasts = JSON.parse(toastContainer.dataset.toasts || '[]');
+        var toastManager = new ToastManager();
+
+        // Render each toast using the ToastManager
+        toasts.forEach(function (toast) {
+            var createdToast = toastManager.toast(toast.body, {
+                title: toast.title,
+                autoClose: toast.autoClose,
+                position: 'bottom-right'
+            });
+        });
+    });
+</script>

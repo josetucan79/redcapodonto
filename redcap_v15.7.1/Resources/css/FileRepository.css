@@ -1,0 +1,97 @@
+p { max-width: 1100px; }
+.file-time { font-size: 12px; color:#666;}
+.fr-comments { font-size: 10px; line-height: 1; color:#666;}
+.frc-edit { cursor: pointer;}
+#file-repository-table-parent { max-width:1100px;margin: 10px 0 20; }
+#file-repository-table { width: 100% !important; }
+.dataTables_processing{
+    height: calc(100% + 50px) !important;
+    top: -10px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+}
+#file-repository-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 570px;
+    padding: 35px;
+    margin:0px 0px 15px 5px;
+    border: 1px dashed #ccc;
+    border-radius: 3px;
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 15px;
+    color: #888;
+    background-color: #fff;
+}
+#file-repository-drop-area:hover {
+    background-color: #e5e5e5;
+}
+#file-repository-drop-area-btns {
+    margin: 5px 20px 5px 5px;
+    padding-bottom: 10px;
+}
+#file-repository-drop-message {
+    text-align: center;
+    width: 100%;
+}
+.file-repository-file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+#file-repository-table_filter input {
+    padding: 5px 8px;
+}
+#ItemListBreadcrumbParent {
+    clear: both;
+    padding: 1px 5px 10px;
+}
+.ItemListBreadcrumb {
+    display: inline;
+    font-weight: 700;
+    white-space: nowrap;
+    font-size: 18px;
+}
+.ItemListBreadcrumbs {
+    display: inline;
+}
+.ItemListBreadcrumbSeparator {
+    color: #909090;
+    display: inline;
+    margin: 0 6px;
+    font-size: 20px;
+}
+a:link.ItemListBreadcrumb-link {
+    color: #909090;
+    position: relative;
+    font-size:18px;
+    transition-duration: .15s;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0,0,.6,1);
+}
+a:link.ItemListBreadcrumb-link:active, a:link.ItemListBreadcrumb-link:focus, a:link.ItemListBreadcrumb-link:hover {
+    color: #222;
+    text-decoration: none;
+    transition-duration: .15s;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0,0,.6,1);
+}
+#file-repository-table_length {
+    float: right;
+    margin-right: 30px;
+}
+#file-repository-table_length select {
+    padding: 1px;
+}
+#file-repository-table_filter input {
+    width: 200px;
+}
+#file-repository-space-usage-display-parent { clear: both; }
+#file-repository-space-usage-display { float: right; margin: 10px 22px 0 10px; color: #777; }
+#file-repository-space-usage-loading { float: left; color: #b5b5b5; text-align: center; font-size:11px; margin: 0 0 5px 150px; visibility: hidden; }
+#file-repository-table_processing { background: none !important; padding-top: 175px !important; }

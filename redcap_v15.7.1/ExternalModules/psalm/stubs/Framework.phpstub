@@ -1,0 +1,9 @@
+<?php namespace ExternalModules;
+
+class Framework{
+    /**
+     * @psalm-taint-sink sql $sql
+     * @return \mysqli_result
+     */
+    function queryData($sql, $parameters){}
+}

@@ -1,0 +1,123 @@
+/* CSS for Multilanguage Survey Display */
+
+.mlm-switcher {
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.mlm-switcher button {
+    margin-right: 0.3em;
+}
+
+.mlm-languages-note {
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+    padding-right: 2rem;
+    font-style: italic;
+    margin: 1em 0 2em 0;
+}
+
+.mlm-change-lang-container {
+    text-align: right;
+    float: right;
+    margin-right: 0.5em;
+}
+
+.mlm-faded::before {
+    content: " ";
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.mlm-faded {
+    filter: blur(2px);
+}
+
+.mlm-translation-missing {
+    background-color: yellow !important;
+    color: red;
+}
+
+.mlm-language-menu {
+    float: right;
+    margin-left: 5px;
+}
+.mlm-language-menu i {
+    color: var(--bs-primary);
+}
+
+
+.dropdown-menu-div {
+    position: absolute;
+    z-index: 1000;
+}
+.dropdown-menu-div ul li a {
+    display: block;
+    text-decoration: none;
+}
+
+.mlm-language-menu .lang-id {
+    color: darkgray;
+}
+
+/* RTL Tweaks */
+/* Survey-only */
+div[dir="rtl"] .choicevert {
+    text-indent: -0.7em;
+}
+div[dir="rtl"] #survey_queue_corner {
+    border-right: 1px solid #bbb;
+    border-left: none;
+    margin-left: -10px;
+}
+div[dir="rtl"] #changeFont {
+    padding-left: 10px;
+}
+/* Data Entry only */
+table[dir="rtl"] #submit-btn-dropdown {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+table[dir="rtl"] #submit-btn-savecontinue {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+/* Data Entry & Survey */
+[dir="rtl"] .choicehoriz {
+    padding-right: 0;
+    margin-right: 0;
+}
+[dir="rtl"] .ui-datepicker-trigger {
+    margin-right: 10px;
+}
+[dir="rtl"] .choicevert input[type=radio],
+[dir="rtl"] .choicevert input[type=checkbox] {
+    margin-right: 1.3em;
+}
+[dir="rtl"] .choicehoriz input[type=radio],
+[dir="rtl"] .choicehoriz input[type=checkbox] {
+    margin-left: 0;
+}
+[dir="rtl"] .choicevert label[data-mlm-type=enum],
+[dir="rtl"] .choicevert label[data-mlm-type=enum],
+[dir="rtl"] .choicehoriz label[data-mlm-type=enum],
+[dir="rtl"] .choicehoriz label[data-mlm-type=enum] {
+    padding-inline-end: 1em;
+}
+[dir="rtl"] span.choicehoriz {
+    display: inline-block;
+}
+[dir="rtl"] span.choicehoriz.hidden {
+    display: none;
+}
+[dir="rtl"] div.enhancedchoice {
+    float: right;
+}

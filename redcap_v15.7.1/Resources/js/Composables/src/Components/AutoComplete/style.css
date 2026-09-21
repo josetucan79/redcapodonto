@@ -1,0 +1,19 @@
+[data-results] {
+    border: 1px solid #ccc;
+    display: none;
+    position: absolute;
+    background-color: white;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 1000;
+}
+
+[data-results] .suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+[data-results] .suggestion-item:hover {
+    background-color: #f0f0f0;
+}

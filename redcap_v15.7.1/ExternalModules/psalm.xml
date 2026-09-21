@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="8"
+    resolveFromConfigFile="true"
+    autoloader="tests/psalm-autoloader.php"
+    findUnusedBaselineEntry="true"
+    findUnusedCode="true"
+>
+    <projectFiles>
+        <directory name="." />
+        <ignoreFiles allowMissingFiles="true">
+            <directory name="vendor" />
+            <directory name="node_modules" />
+            <directory name="tests" />
+            <directory name="docs" />
+            <directory name="../redcap_v*" /> <!-- When using <redcap-root>/external_modules -->
+            <directory name="../../redcap_v*" /> <!-- When using <redcap-root>/redcap_v#.#.#/ExternalModules, like in GitHub Actions -->
+            <directory name="psalm/replaced-classes" />
+            <directory name="classes/framework/dependencies" />
+        </ignoreFiles>
+    </projectFiles>
+    <plugins>
+        <plugin filename="psalm/FrameworkPsalmPlugin.php" />
+    </plugins>
+    <stubs>
+        <file name="psalm/stubs/mysqli_result.phpstub" />
+        <file name="psalm/stubs/functions.phpstub" />
+        <file name="psalm/stubs/Framework.phpstub" />
+        <file name="psalm/stubs/AbstractExternalModule.phpstub" />
+    </stubs>
+    <globals>
+        <!-- From REDCap Core -->
+        <var name="SUPER_USER" type="string" />
+        <var name="ACCESS_CONTROL_CENTER" type="bool" />
+        <var name="UI_ID" type="integer" />
+        <var name="PAGE" type="string" />
+        <var name="auth_meth_global" type="string" />
+        <var name="lang" type="array" />
+        <var name="app_title" type="string" />
+        <var name="external_modules_project_custom_text" type="string" />
+        <var name="user_firstname" type="string" />
+        <var name="user_lastname" type="string" />
+        <var name="project_contact_email" type="string" />
+        <var name="user_email" type="string" />
+        <var name="send_emails_admin_tasks" type="string" />
+
+        <!-- From the EM Framework (not really globals, but this works for variables in scope during require calls as well) -->
+        <var name="project_id" type="string" />
+        <var name="prefix" type="string" />
+        <var name="version" type="string" />
+        <var name="config" type="array" />
+        <var name="module" type="ExternalModules\Framework" />
+        <var name="arguments" type="array" />
+
+        <!-- Globals shared with module scanning -->
+        <var name="rc_connection" type="mysqli" />
+    </globals>
+    <issueHandlers>
+        <InvalidGlobal errorLevel="suppress" />
+        <UnusedMethodCall errorLevel="suppress" />
+        <UnusedClosureParam errorLevel="suppress" />
+        <UnusedForeachValue errorLevel="suppress" />
+        <UnusedVariable>
+            <errorLevel type="suppress">
+                <file name=".github/workflows/database.php" />
+            </errorLevel>
+        </UnusedVariable>
+        <UnusedClass>
+            <errorLevel type="suppress">
+                <referencedClass name="Vanderbilt\ModuleDevelopmentExamples\ModuleDevelopmentExamples" />
+            </errorLevel>
+        </UnusedClass>
+        <PossiblyUnusedMethod>
+            <errorLevel type="suppress">
+                <file name="classes/AbstractExternalModule.php" />
+                <file name="classes/framework/Framework.php" />
+                <file name="classes/framework/Project.php" />
+                <file name="classes/framework/User.php" />
+                <file name="classes/framework/Records.php" />
+                <file name="classes/framework/ProjectChild.php" />
+                <file name="classes/framework/Form.php" />
+                <file name="classes/framework/Field.php" />
+            </errorLevel>
+        </PossiblyUnusedMethod>
+    </issueHandlers>
+</psalm>

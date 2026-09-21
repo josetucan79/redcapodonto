@@ -1,0 +1,40 @@
+{% extends "layouts/main.html.twig" %}
+
+{% block title %}EHR Launcher - Standalone Launch{% endblock %}
+
+{% block content %}
+<div>
+    <h3>Choose Your FHIR System</h3>
+    <p>
+        REDCap is configured to work with multiple FHIR systems.<br>
+        To proceed, please select the FHIR system you wish to engage with for your session.
+    </p>
+
+    {% if ehrSystems|length == 1 %}
+        <a class="btn btn-primary btn-sm text-white" href="{{ currentURL }}&ehr_id={{ ehrSystems[0].ehr_id }}">
+            <i class="fas fa-fire"></i> standalone launch
+        </a>
+    {% else %}
+        <div class="simple-dropdown">
+            <button class="btn btn-primary btn-sm simple-dropdown-toggle" type="button">
+                <i class="fas fa-fire"></i>
+                <span>Select FHIR System...</span>
+                <span class="simple-caret"></span>
+            </button>
+            <ul class="simple-dropdown-menu">
+                {% for ehrSystem in ehrSystems %}
+                    <li>
+                        <a class="simple-dropdown-item" href="{{ currentURL }}&ehr_id={{ ehrSystem.ehr_id }}">
+                            {{ ehrSystem.ehr_name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>
+
+<style>
+/* Add your custom styles here */
+</style>
+{% endblock %}

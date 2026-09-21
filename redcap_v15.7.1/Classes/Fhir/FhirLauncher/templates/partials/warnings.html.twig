@@ -1,0 +1,6 @@
+{# templates/partials/warnings.html.twig #}
+<div class="authorization-warnings">
+  {% for warning in warnings %}
+  <div class="alert alert-warning" role="alert" style="width:800px;">{{ warning|raw }}</div>
+  {% endfor %}
+</div>

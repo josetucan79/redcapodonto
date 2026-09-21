@@ -1,0 +1,15 @@
+<?php namespace ExternalModules;
+
+class AbstractExternalModule{
+    public Framework $framework;
+
+	function createQuery(): Query{}
+
+    function getProject(): Project{}
+
+    /**
+     * @psalm-taint-sink sql $sql
+     * @return \mysqli_result
+     */
+    function queryData($sql, $parameters){}
+}

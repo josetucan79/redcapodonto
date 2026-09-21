@@ -1,0 +1,58 @@
+{
+    "config": {
+        "platform-check": false,
+        "platform": {
+            "php": "8.0.2"
+        },
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "require": {
+        "league/flysystem": "*",
+        "league/flysystem-sftp": "^1.0.22",
+        "league/flysystem-webdav": "*",
+        "aws/aws-sdk-php": "*",
+        "greenlion/php-sql-parser": "*",
+        "rmccue/requests": "*",
+        "phpmailer/phpmailer": "*",
+        "mobiledetect/mobiledetectlib": "*",
+        "mtdowling/jmespath.php": "*",
+        "sabre/uri": "*",
+        "sendgrid/sendgrid": "*",
+        "thenetworg/oauth2-azure": "*",
+        "mailgun/mailgun-php": "*",
+        "kriswallsmith/buzz": "*",
+        "nyholm/psr7": "*",
+        "php-http/curl-client": "*",
+        "php-http/message": "*",
+        "google/cloud-storage": "*",
+        "google/apiclient": "*",
+        "jumbojett/openid-connect-php": "*",
+        "guzzlehttp/psr7": "*",
+        "laravel/serializable-closure": "*",
+        "opis/closure": "*",
+        "doctrine/orm": "^2.20",
+        "doctrine/cache": "^2.2",
+        "psr/cache": "^3.0",
+        "symfony/cache": "^6.0",
+        "twig/twig": "^3.19"
+    },
+    "autoload": {
+        "psr-4": {
+            "Duo\\DuoUniversal\\": "./Duo/DuoUniversal",
+            "eftec\\bladeone\\": "./BladeOne"
+        }
+    },
+    "scripts": {
+        "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
+    },
+    "extra": {
+        "google/apiclient-services": [
+            "Oauth2"
+        ]
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.24"
+    }
+}

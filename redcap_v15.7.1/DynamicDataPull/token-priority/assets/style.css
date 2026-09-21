@@ -1,0 +1,16 @@
+tr.dragging {
+    cursor: move;
+}
+tr.dragging td {
+    background-color: #00aaff;
+}
+tr[data-is-new="true"] td {
+    background-color: rgb(209 231 221);
+}
+tr[data-deleted="true"] td {
+    background-color: rgba(224, 172, 172, 0.3);
+}
+tr[data-deleted="true"] td.cell-priority,
+tr[data-deleted="true"] td.cell-username {
+    text-decoration: line-through;
+}

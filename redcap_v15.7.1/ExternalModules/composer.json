@@ -1,0 +1,17 @@
+{
+    "require-dev": {
+        "phpcompatibility/php-compatibility": "dev-develop",
+        "johnkary/phpunit-speedtrap": "*",
+        "vimeo/psalm": "*",
+        "phpunit/phpunit": "^9",
+        "squizlabs/php_codesniffer": "3.10.3"
+    },
+    "config": {
+        "platform": {
+            "php": "8.0.2"
+        },
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": false
+        }
+    }
+}

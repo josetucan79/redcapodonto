@@ -1,0 +1,64 @@
+<?php
+
+class mysqli_result {
+
+    /**
+     * @psalm-taint-source input
+     */
+    function fetch_all(){}
+
+    /**
+     * @psalm-taint-source input
+     */
+    function fetch_array(){}
+
+    /**
+     * @psalm-taint-source input
+     */
+    function fetch_assoc(){}
+
+    /**
+     * @psalm-taint-source input
+     */
+    function fetch_column(){}
+
+    /**
+     * @psalm-taint-source input
+     */
+    function fetch_object(){}
+
+    /**
+     * @psalm-taint-source input
+     */
+    function fetch_row(){}
+}
+
+/**
+ * @psalm-taint-source input
+ */
+function mysqli_fetch_all() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function mysqli_fetch_array() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function mysqli_fetch_assoc() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function mysqli_fetch_column() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function mysqli_fetch_object() {}
+
+/**
+ * @psalm-taint-source input
+ */
+function mysqli_fetch_row() {}

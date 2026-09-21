@@ -1,0 +1,51 @@
+a.statuslink_selected { color:#777; }
+a.statuslink_unselected { text-decoration:underline; }
+.lock, .esign { display:none;margin:1px 1px 2px 1px; }
+.lockEsignIcons { margin-right:4px;display:none; }
+table.dataTable tbody tr td, 
+table#record_status_table tbody tr td { padding: 3px !important; }
+table#record_status_table tbody tr td { white-space: nowrap !important; }
+table.dataTable thead tr th {
+	background-color: #FFFFE0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+table.dataTable.cell-border thead tr th {
+	border-right: 1px solid #ddd;
+}
+table.dataTable.cell-border thead tr th:first-child {
+    border-left: 1px solid #ddd;
+}
+#record_status_table { border-bottom:1px solid #ccc; }
+#dashboard-config textarea {
+	max-height: 300px;
+}
+#dashboard-config .td1 {
+	font-weight:bold;
+	padding:3px 15px 3px 10px;vertical-align:top;
+	width:30%;
+}
+#dashboard-config .td2 {
+	padding:3px 0;vertical-align:top;
+	width:70%;
+}
+#choose_select_forms_events_div {
+	min-width:280px;
+	background: transparent url(../images/upArrow.png) no-repeat center top;
+	position:absolute;
+	z-index:10;
+	padding:9px 0 0;
+	display: none;
+	font-size:11px;
+}
+#choose_select_forms_events_div_sub {
+	background-color: #fafafa;
+	padding:3px 6px 10px;
+	border:1px solid #000;
+	overflow-y: scroll;
+	max-height: 400px;
+}
+#choose_select_forms_events_table tr td div { vertical-align:top; padding:2px 5px 4px 1px; }
+.hangevl { text-indent: -1.5em; margin-left: 3.2em; }
+.hangevc { text-indent: -1.5em; margin-left: 1.8em; }
+#selected_forms_events { cursor: pointer; cursor: hand; border:none; background-color: transparent; width:95%; max-width:95%;overflow:hidden;white-space: nowrap;text-overflow: ellipsis; }

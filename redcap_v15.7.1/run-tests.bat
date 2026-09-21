@@ -1,0 +1,1 @@
+cls && "UnitTests/vendor/bin/phpunit" --configuration phpunit.xml

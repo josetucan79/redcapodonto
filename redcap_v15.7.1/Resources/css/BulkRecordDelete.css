@@ -1,0 +1,77 @@
+div.alert {
+    border: inherit !important;
+}
+
+.wrapper {
+    overflow:auto;
+    max-height: 300px;
+}
+
+.wrapper ul {
+    list-style: none;
+}
+
+.wrapper ul li {
+    float: left;
+    width: 11em;
+}
+
+.wrapper br {
+    clear:left;
+}
+
+.wrapper {
+    /*position: relative;*/
+    margin-bottom: 1em;
+}
+
+.form-group {
+    padding-top: 20px;
+}
+
+.toggle-ribbon {
+    padding: 10px 0;
+}
+
+.ribbon-text {
+    font-weight: bold;
+    position: relative;
+}
+
+#triangle {
+    position: absolute;
+    margin-left:5px;
+    top:60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#longitudinal-arms-list-option1, #longitudinal-arms-list-option2 {
+    margin-top: 5px;
+}
+
+#prevPage, #nextPage {
+    margin-right: 5px;
+}
+
+#searchBox {
+    width: 100%;
+    padding: 7px 10px 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 12px;
+}
+
+#searchBox::placeholder {
+    font-size: 1.3em;
+}
+
+#searchBox:focus {
+    outline: 1px solid rgb(108, 117, 125);
+    border-color: rgb(108, 117, 125);
+}
+#record-output label {
+    font-size: 15px;
+}

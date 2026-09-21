@@ -1,0 +1,21 @@
+<div id="app">
+  <div class="progress-ring"></div>
+  <br />
+  <input type="range" min="0" max="100" value="0" id="progress-input" />
+  <span id="progress-value">0%</span>
+</div>
+
+<script type="module">
+  import { useCircleProgress } from "@/Components/CircleProgress/index.js";
+
+  const circle = useCircleProgress(".progress-ring");
+
+  const input = document.getElementById("progress-input");
+  const valueDisplay = document.getElementById("progress-value");
+  input.addEventListener("input", (e) => {
+    const value = e.target.value;
+    circle.setProgress(value);
+    valueDisplay.textContent = `${value}%`;
+  });
+
+</script>

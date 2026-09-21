@@ -1,0 +1,35 @@
+{# templates/partials/global-js-variables.html.twig #}
+<script>
+    // global js variables
+    var redcap_version = '{{ REDCAP_VERSION }}';
+    var app_path_webroot = "{{ APP_PATH_WEBROOT }}";
+    var app_path_webroot_full = "{{ APP_PATH_WEBROOT_FULL }}";
+    var redcap_csrf_token = "{{ redcap_csrf_token }}";
+    var app_path_images = "{{ APP_PATH_IMAGES }}"
+    var page = location.pathname.replace('/', '');
+
+        // Function to get the width of the scrollbar
+    function getScrollBarWidth() {
+        var div = document.createElement("div");
+        div.style.visibility = "hidden";
+        div.style.overflow = "scroll"; // Force scrollbars
+        div.style.width = "100px";
+        div.style.position = "absolute";
+        div.style.top = "-9999px";
+        document.body.appendChild(div);
+
+        var scrollBarWidth = div.offsetWidth - div.clientWidth;
+        document.body.removeChild(div);
+
+        return scrollBarWidth;
+    }
+
+    // Determine if a mobile device based on screen size
+    function isMobileDeviceFunc() {
+        var scrollBarWidth = (document.documentElement.scrollHeight > window.innerHeight) ? getScrollBarWidth() : 0;
+        return (window.innerWidth + scrollBarWidth <= maxMobileWidth ? 1 : 0);
+    }
+
+    var maxMobileWidth = 767;
+    var isMobileDevice = isMobileDeviceFunc();
+</script>
